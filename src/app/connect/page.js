@@ -1,8 +1,5 @@
-import Animation from "./components/Home/animation";
-import Hero from "./components/Home/hero";
-import Footer from "./components/footer";
-import Header from "./components/header";
-
+import Header from "../components/header";
+import Footer from "../components/footer";
 export default function Home() {
   return (
     <div>
@@ -12,7 +9,7 @@ export default function Home() {
           className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
           bis_skin_checked="1"
         >
-          <Hero />
+          <h1>connect</h1>
         </div>
       </section>
       <Footer />

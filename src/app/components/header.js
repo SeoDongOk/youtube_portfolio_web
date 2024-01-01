@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Header() {
   return (
     <header className="text-gray-600 body-font">
@@ -5,7 +7,10 @@ export default function Header() {
         className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
         bis_skin_checked="1"
       >
-        <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <Link
+          href={"/"}
+          className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -19,11 +24,18 @@ export default function Header() {
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg>
           <span className="ml-3 text-xl">이끽끼 포트폴리오</span>
-        </a>
+        </Link>
+
         <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-          <a className="mr-5 hover:text-gray-900">홈</a>
-          <a className="mr-5 hover:text-gray-900">프로젝트</a>
-          <a className="mr-5 hover:text-gray-900">연락하기</a>
+          <Link href={"/"} className="mr-5 hover:text-gray-900">
+            홈
+          </Link>
+          <Link href={"/project"} className="mr-5 hover:text-gray-900">
+            프로젝트
+          </Link>
+          <Link href={"/connect"} className="mr-5 hover:text-gray-900">
+            연락하기
+          </Link>
         </nav>
         <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
           Button
