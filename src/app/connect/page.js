@@ -9,7 +9,7 @@ export default function Home() {
           className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
           bis_skin_checked="1"
         >
-          <h1>프로젝트</h1>
+          <h1>connect</h1>
         </div>
       </section>
       <Footer />

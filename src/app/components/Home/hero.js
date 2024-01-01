@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Animation from "./animation";
 
 export default function Hero() {
@@ -20,9 +21,11 @@ export default function Hero() {
           공공단체에 공무원의 직무상 불법행위로 인한 배상은 청구할 수 없다.
         </p>
         <div className="flex justify-center" bis_skin_checked="1">
-          <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            프로젝트 보러가기
-          </button>
+          <Link href={"/project"}>
+            <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+              프로젝트 보러가기
+            </button>
+          </Link>
         </div>
       </div>
       <div
