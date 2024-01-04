@@ -1,7 +1,8 @@
-import { useTheme } from "next-themes";
+"use client";
+import React, { useTheme } from "next-themes";
 
 export default function DarkModeToggleButton() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme("");
 
   return (
     <>
