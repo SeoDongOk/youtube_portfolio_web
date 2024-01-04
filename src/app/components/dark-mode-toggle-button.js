@@ -3,8 +3,9 @@ import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 export default function DarkModeToggleButton() {
+  localStorage.setItem("theme", "light");
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme("");
+  const { theme, setTheme } = useTheme();
   useEffect(() => {
     setMounted(true);
   }, []);
