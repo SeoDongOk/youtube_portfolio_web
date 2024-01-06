@@ -22,7 +22,7 @@ export default function Hero() {
         </p>
         <div className="flex justify-center" bis_skin_checked="1">
           <Link href={"/project"}>
-            <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg dark:hover:bg-indigo-700 dark:bg-indigo-800">
               프로젝트 보러가기
             </button>
           </Link>
