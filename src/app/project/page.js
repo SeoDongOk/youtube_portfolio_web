@@ -2,6 +2,7 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { ThemeProvider } from "next-themes";
+import { TOKEN } from "../config";
 export default function Home() {
   return (
     <div>
@@ -19,4 +20,17 @@ export default function Home() {
       </ThemeProvider>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const options = {
+    method: "POST",
+    header: {
+      Accept: "application/json",
+      "Notion-Version": "2022-02-22",
+      "Content-Type": "application/json",
+      Authorization: `${TOKEN}`,
+    },
+    body: JSON.stringify({ page_size: 100 }),
+  };
 }
