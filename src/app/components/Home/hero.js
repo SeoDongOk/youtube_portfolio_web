@@ -8,7 +8,7 @@ export default function Hero() {
         className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center"
         bis_skin_checked="1"
       >
-        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+        <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium ">
           안녕하세요 이끽끼 입니다 !
           <br className="hidden lg:inline-block" />
           오늘도 빡공?!
@@ -22,7 +22,7 @@ export default function Hero() {
         </p>
         <div className="flex justify-center" bis_skin_checked="1">
           <Link href={"/project"}>
-            <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+            <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg dark:hover:bg-indigo-700 dark:bg-indigo-800">
               프로젝트 보러가기
             </button>
           </Link>

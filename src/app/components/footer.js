@@ -3,13 +3,13 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <>
-      <footer className="text-gray-600 body-font">
-        <div className="bg-gray-100" bis_skin_checked="1">
+      <footer className="body-font">
+        <div className="" bis_skin_checked="1">
           <div
             className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col"
             bis_skin_checked="1"
           >
-            <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <a className="flex title-font font-medium items-center md:justify-start justify-center ">
               <span className="ml-3 text-xl">이끽끼 포트폴리오</span>
             </a>
             <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">
