@@ -2,7 +2,9 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { ThemeProvider } from "next-themes";
-import { TOKEN } from "../config";
+import { getStaticProps } from "../data/NotionData";
+const demo = getStaticProps();
+
 export default function Home() {
   return (
     <div>
@@ -14,23 +16,11 @@ export default function Home() {
             bis_skin_checked="1"
           >
             <h1>프로젝트</h1>
+            {/* {demo} */}
           </div>
         </section>
         <Footer />
       </ThemeProvider>
     </div>
   );
-}
-
-export async function getStaticProps() {
-  const options = {
-    method: "POST",
-    header: {
-      Accept: "application/json",
-      "Notion-Version": "2022-02-22",
-      "Content-Type": "application/json",
-      Authorization: `${TOKEN}`,
-    },
-    body: JSON.stringify({ page_size: 100 }),
-  };
 }
