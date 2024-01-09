@@ -16,7 +16,7 @@ export default function Home() {
             bis_skin_checked="1"
           >
             <h1>프로젝트</h1>
-            {/* {demo} */}
+            {demo}
           </div>
         </section>
         <Footer />
