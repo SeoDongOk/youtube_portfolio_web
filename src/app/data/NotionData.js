@@ -1,12 +1,7 @@
-import axios from "axios";
 import { TOKEN, DATABASE_ID } from "../config";
-
-export async function getStaticProps() {
+import axios from "axios";
+export async function getServerSideProps() {
   try {
-    console.log("TOKEN2: ", TOKEN);
-    if (TOKEN === undefined) {
-      return null;
-    }
     const options = {
       method: "POST",
       url: `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
@@ -16,17 +11,33 @@ export async function getStaticProps() {
         "content-type": "application/json",
         Authorization: `${TOKEN}`,
       },
-      data: { page_size: 100 },
+      body: JSON.stringify({
+        sorts: [
+          {
+            property: "Name",
+            direction: "ascending",
+          },
+        ],
+        page_size: 100,
+      }),
     };
+
     const res = await axios.request(options);
-    console.log("res: ", res.data);
-    return (
-      <div>
-        {TOKEN}
-        <h1>{DATABASE_ID}</h1>
-      </div>
-    );
+
+    const projects = await res.data;
+
+    const projectNames = projects.results.map((aProject) => {
+      console.log("aProject: ", aProject.properties.이름.title[0].plain_text);
+      if (aProject.properties.이름.title[0].plain_text === undefined) {
+        return;
+      }
+      return aProject.properties.이름.title[0].plain_text;
+    });
+    console.log(projectNames);
+    return {
+      props: { projectNames },
+    };
   } catch (e) {
-    console.log("error on notionDAta: ", e);
+    console.log("error on notionData: ", e);
   }
 }
