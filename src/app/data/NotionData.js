@@ -1,5 +1,7 @@
 import { TOKEN, DATABASE_ID } from "../config";
 import axios from "axios";
+
+//error from here
 export async function getServerSideProps() {
   try {
     const options = {
