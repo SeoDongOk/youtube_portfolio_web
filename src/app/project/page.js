@@ -8,13 +8,14 @@ import { useState, useEffect } from "react";
 let demo;
 
 const callNotionData = async () => {
-  demo = getNotionDataApi();
+  demo = await getNotionDataApi();
 };
 
 export default function Home() {
-  const [getNotionData, setGetNotionData] = useState("");
+  const [getNotionData, setGetNotionData] = useState([]);
   useEffect(() => {
-    setGetNotionData(`${demo}`);
+    setGetNotionData(demo);
+    console.log("getNotionData2: ", getNotionData);
   }, demo);
   callNotionData();
   console.log("getNotionData: ", getNotionData);
