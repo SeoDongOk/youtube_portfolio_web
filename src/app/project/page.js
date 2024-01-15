@@ -2,11 +2,10 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { ThemeProvider } from "next-themes";
+import { getNotionDataApi } from "../data/NotionData";
 
-// const demo = getServerSideProps();
-
-export default function Home({ projectNames }) {
-  console.log("projectNames: ", projectNames);
+const demo = getNotionDataApi();
+export default function Home() {
   return (
     <div>
       <ThemeProvider>
@@ -17,6 +16,7 @@ export default function Home({ projectNames }) {
             bis_skin_checked="1"
           >
             <h1>프로젝트</h1>
+            <p>demo</p>
           </div>
         </section>
         <Footer />
