@@ -3,9 +3,21 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { ThemeProvider } from "next-themes";
 import { getNotionDataApi } from "../data/NotionData";
+import { useState, useEffect } from "react";
 
-const demo = getNotionDataApi();
+let demo;
+
+const callNotionData = async () => {
+  demo = getNotionDataApi();
+};
+
 export default function Home() {
+  const [getNotionData, setGetNotionData] = useState("");
+  useEffect(() => {
+    setGetNotionData(`${demo}`);
+  }, demo);
+  callNotionData();
+  console.log("getNotionData: ", getNotionData);
   return (
     <div>
       <ThemeProvider>
