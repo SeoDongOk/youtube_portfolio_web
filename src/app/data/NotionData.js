@@ -2,7 +2,7 @@ import { TOKEN, DATABASE_ID } from "../config";
 import axios from "axios";
 
 //error from here
-export async function getServerSideProps() {
+export async function getNotionDataApi() {
   try {
     const options = {
       method: "POST",
@@ -36,9 +36,7 @@ export async function getServerSideProps() {
       return aProject.properties.이름.title[0].plain_text;
     });
     console.log(projectNames);
-    return {
-      props: { projectNames },
-    };
+    return projectNames;
   } catch (e) {
     console.log("error on notionData: ", e);
   }

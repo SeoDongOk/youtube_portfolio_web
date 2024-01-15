@@ -2,11 +2,23 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { ThemeProvider } from "next-themes";
+import { getNotionDataApi } from "../data/NotionData";
+import { useState, useEffect } from "react";
 
-// const demo = getServerSideProps();
+let demo;
 
-export default function Home({ projectNames }) {
-  console.log("projectNames: ", projectNames);
+const callNotionData = async () => {
+  demo = await getNotionDataApi();
+};
+
+export default function Home() {
+  const [getNotionData, setGetNotionData] = useState([]);
+  useEffect(() => {
+    setGetNotionData(demo);
+    console.log("getNotionData2: ", getNotionData);
+  }, demo);
+  callNotionData();
+  console.log("getNotionData: ", getNotionData);
   return (
     <div>
       <ThemeProvider>
@@ -17,6 +29,7 @@ export default function Home({ projectNames }) {
             bis_skin_checked="1"
           >
             <h1>프로젝트</h1>
+            <p>demo</p>
           </div>
         </section>
         <Footer />
