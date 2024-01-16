@@ -4,21 +4,13 @@ import Footer from "../components/footer";
 import { ThemeProvider } from "next-themes";
 import { getNotionDataApi } from "../data/NotionData";
 import { useState, useEffect } from "react";
-
-let demo;
-
+import Project_Item from "@/app/components/projects/project-items";
 const callNotionData = async () => {
-  demo = await getNotionDataApi();
+  return await getNotionDataApi();
 };
-
 export default function Home() {
-  const [getNotionData, setGetNotionData] = useState([]);
-  useEffect(() => {
-    setGetNotionData(demo);
-    console.log("getNotionData2: ", getNotionData);
-  }, demo);
-  callNotionData();
-  console.log("getNotionData: ", getNotionData);
+  // callNotionData();
+
   return (
     <div>
       <ThemeProvider>
@@ -29,7 +21,7 @@ export default function Home() {
             bis_skin_checked="1"
           >
             <h1>프로젝트</h1>
-            <p>demo</p>
+            <p>{Project_Item}</p>
           </div>
         </section>
         <Footer />
