@@ -5,12 +5,27 @@ import { ThemeProvider } from "next-themes";
 import { getNotionDataApi } from "../data/NotionData";
 import { useState, useEffect } from "react";
 import Project_Item from "@/app/components/projects/project-items";
-const callNotionData = async () => {
-  return await getNotionDataApi();
-};
+// const callNotionData = async () => {
+//   return await getNotionDataApi();
+// };
 export default function Home() {
-  // callNotionData();
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // 비동기 작업 수행
+        console.log("eeee");
+        const result = await Project_Item();
 
+        // 데이터 처리
+        console.log(result);
+      } catch (error) {
+        console.error("Error fetching data:");
+      }
+    };
+
+    // fetchData 함수 호출
+    fetchData();
+  }, []);
   return (
     <div>
       <ThemeProvider>
