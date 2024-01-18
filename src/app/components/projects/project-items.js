@@ -3,9 +3,8 @@ import React, { useEffect } from "react";
 import { getNotionDataApi } from "@/app/data/NotionData";
 
 const Project_Item = () => {
-  console.log("here? start");
   useEffect(() => {
-    console.log("here?");
+    console.log("useEffect in Prject_Item");
     const callData = async () => {
       try {
         const data = await getNotionDataApi();
