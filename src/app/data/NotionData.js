@@ -3,6 +3,7 @@ import axios from "axios";
 
 export async function getNotionDataApi() {
   try {
+    console.log("try catch in getNotionData");
     const options = {
       method: "POST",
       url: `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
@@ -22,7 +23,9 @@ export async function getNotionDataApi() {
         page_size: 100,
       }),
     };
-
+    if (DATABASE_ID || TOKEN === undefined) {
+      throw new Error("DATABASE_ID or TOKEN value is undefined");
+    }
     const res = await axios.request(options);
 
     const projects = await res.data;

@@ -19,7 +19,7 @@ export default function Home() {
         // 데이터 처리
         console.log(result);
       } catch (error) {
-        console.error("Error fetching data:");
+        console.error("Error fetching data");
       }
     };
 
@@ -36,7 +36,6 @@ export default function Home() {
             bis_skin_checked="1"
           >
             <h1>프로젝트</h1>
-            <p>{Project_Item}</p>
           </div>
         </section>
         <Footer />
