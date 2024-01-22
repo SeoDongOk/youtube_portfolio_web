@@ -2,7 +2,7 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { ThemeProvider } from "next-themes";
-import { getNotionDataApi } from "../data/NotionData";
+// import { getNotionDataApi } from "../data/NotionData";
 import { useState, useEffect } from "react";
 import Project_Item from "@/app/components/projects/project-items";
 // const callNotionData = async () => {
