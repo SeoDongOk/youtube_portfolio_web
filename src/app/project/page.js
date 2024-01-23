@@ -10,19 +10,18 @@ import Project_Item from "@/app/components/projects/project-items";
 // };
 export default function Home() {
   useEffect(() => {
+    // console.log("kekeKing");
     const fetchData = async () => {
       try {
         // 비동기 작업 수행
         console.log("eeee");
-        const result = await Project_Item();
-
+        const result = Project_Item();
         // 데이터 처리
         console.log(result);
       } catch (error) {
         console.error("Error fetching data");
       }
     };
-
     // fetchData 함수 호출
     fetchData();
   }, []);

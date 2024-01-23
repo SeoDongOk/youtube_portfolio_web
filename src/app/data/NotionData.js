@@ -1,11 +1,8 @@
 "use client";
-import react, { useState } from "react";
 import { TOKEN, DATABASE_ID } from "../config";
 import axios from "axios";
 
 export async function GetNotionDataApi() {
-  const [dbKey, setDbKey] = useState("");
-
   try {
     console.log("try catch in getNotionData");
     const options = {
