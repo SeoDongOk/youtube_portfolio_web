@@ -2,23 +2,29 @@
 import Header from "../components/header";
 import Footer from "../components/footer";
 import { ThemeProvider } from "next-themes";
-import { getNotionDataApi } from "../data/NotionData";
+// import { getNotionDataApi } from "../data/NotionData";
 import { useState, useEffect } from "react";
-
-let demo;
-
-const callNotionData = async () => {
-  demo = await getNotionDataApi();
-};
-
+import Project_Item from "@/app/components/projects/project-items";
+// const callNotionData = async () => {
+//   return await getNotionDataApi();
+// };
 export default function Home() {
-  const [getNotionData, setGetNotionData] = useState([]);
   useEffect(() => {
-    setGetNotionData(demo);
-    console.log("getNotionData2: ", getNotionData);
-  }, demo);
-  callNotionData();
-  console.log("getNotionData: ", getNotionData);
+    // console.log("kekeKing");
+    const fetchData = async () => {
+      try {
+        // 비동기 작업 수행
+        console.log("eeee");
+        const result = Project_Item();
+        // 데이터 처리
+        console.log(result);
+      } catch (error) {
+        console.error("Error fetching data");
+      }
+    };
+    // fetchData 함수 호출
+    fetchData();
+  }, []);
   return (
     <div>
       <ThemeProvider>
@@ -29,7 +35,6 @@ export default function Home() {
             bis_skin_checked="1"
           >
             <h1>프로젝트</h1>
-            <p>demo</p>
           </div>
         </section>
         <Footer />

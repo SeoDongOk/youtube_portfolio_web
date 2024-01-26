@@ -1,9 +1,9 @@
+"use client";
 import { TOKEN, DATABASE_ID } from "../config";
-import axios from "axios";
 
-//error from here
-export async function getNotionDataApi() {
+export async function GetNotionDataApi() {
   try {
+    console.log("try catch in getNotionData");
     const options = {
       method: "POST",
       url: `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
@@ -23,8 +23,10 @@ export async function getNotionDataApi() {
         page_size: 100,
       }),
     };
-
-    const res = await axios.request(options);
+    if (DATABASE_ID || TOKEN === undefined) {
+      throw new Error("DATABASE_ID or TOKEN value is undefined");
+    }
+    const res = await fetch.request(options);
 
     const projects = await res.data;
 
