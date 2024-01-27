@@ -1,6 +1,5 @@
 "use client";
 import { TOKEN, DATABASE_ID } from "../config";
-
 export async function GetNotionDataApi() {
   try {
     console.log("try catch in getNotionData");
