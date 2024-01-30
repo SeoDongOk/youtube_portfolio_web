@@ -23,9 +23,9 @@ export async function GetNotionDataApi() {
         page_size: 100,
       }),
     };
-    if (DATABASE_ID || TOKEN === undefined) {
-      throw new Error("DATABASE_ID or TOKEN value is undefined");
-    }
+    // if (DATABASE_ID || TOKEN === undefined) {
+    //   throw new Error("DATABASE_ID or TOKEN value is undefined");
+    // }
     const res = await fetch.request(options);
 
     const projects = await res.data;
