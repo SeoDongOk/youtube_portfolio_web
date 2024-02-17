@@ -5,7 +5,7 @@ const Project_Item = () => {
   const callData = async () => {
     try {
       console.log("start getNotionData");
-      const data = await GetNotionDataApi();
+      const data = fetch(GetNotionDataApi());
       console.log("data: ", data);
     } catch (e) {
       console.log("e: ", e);
